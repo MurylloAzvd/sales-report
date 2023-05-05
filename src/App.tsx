@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 const categories = [
   {
@@ -191,45 +192,53 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Hello</h1>
-      <div>
-        <label htmlFor="categories">Categorias</label>
-        <select
-          id="categories"
-          value={filter.category}
-          onChange={handleCategoryChange}
-        >
-          {categories.map(({ label, value }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-
-        <label htmlFor="products">Produtos</label>
-        <select
-          id="products"
-          value={filter.product}
-          onChange={handleProductChange}
-        >
-          {products?.map(({ label, value }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
-
-        <label htmlFor="brands">Marca</label>
-        <select id="brands" value={filter.brand} onChange={handleBrandChange}>
-          {brands?.map(({ label, value }) => (
-            <option key={value} value={value}>
-              {label}
-            </option>
-          ))}
-        </select>
+    <>
+      <div className="header">
+        <h1>Sales Report</h1>
       </div>
-    </div>
+      <div className="selects-container">
+        <div className="select-group">
+          <label htmlFor="categories">Categoria:</label>
+          <select
+            id="categories"
+            value={filter.category}
+            onChange={handleCategoryChange}
+          >
+            {categories.map(({ label, value }) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="select-group">
+          <label htmlFor="products">Produto:</label>
+          <select
+            id="products"
+            value={filter.product}
+            onChange={handleProductChange}
+          >
+            {products?.map(({ label, value }) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="select-group">
+          <label htmlFor="brands">Marca:</label>
+          <select id="brands" value={filter.brand} onChange={handleBrandChange}>
+            {brands?.map(({ label, value }) => (
+              <option key={value} value={value}>
+                {label}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+    </>
   );
 }
 

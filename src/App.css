@@ -1,0 +1,29 @@
+.header {
+  background-color: #5583e9;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header > h1 {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.selects-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px;
+}
+
+.select-group {
+  display: flex;
+}
+
+.select-group > select {
+  margin-left: 4px;
+}
+
